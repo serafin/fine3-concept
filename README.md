@@ -30,3 +30,9 @@ js
 repo
 model
 
+# to think
+- subcontent
+- nowa struktura folderow, w httpdocs tylko konieczne pliki
+- `f_db_mysql_table`
+- f_m deprecated
+- 
