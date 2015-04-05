@@ -30,9 +30,13 @@ js
 repo
 model
 
+# zaleznosci i linkowania moduly
+- routy kontrollery
+- warstwa admin per module
+
 # to think
 - subcontent
 - nowa struktura folderow, w httpdocs tylko konieczne pliki
-- `f_db_mysql_table`
+- `f_database_mysql_table`
 - f_m deprecated
-- 
+- nowy front controller, controller, dispatch
