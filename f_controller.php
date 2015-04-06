@@ -1,7 +1,7 @@
 <?php
 
 
-interface f_controller_base_intreface 
+interface f_c_intreface 
 {
     
     public function request(f_controller_request_interface $request = null);
@@ -9,12 +9,12 @@ interface f_controller_base_intreface
     public function dispatch();
 }   
 
-interface f_controller_front_interface
+interface f_c_front_interface
 {
     public function run();
 }
     
-class f_controller_action
+class f_c_action
 {
     
     public function dispatch() 
@@ -38,7 +38,7 @@ class f_controller_action
     
 }
     
-class f_controller_action_viewAutoRender
+class f_c_action_viewAutoRender
 {
     
     
@@ -55,3 +55,32 @@ class f_controller_action_viewAutoRender
     }
     
 }
+
+interface f_c_router_interface
+{
+
+}
+
+interface f_c_route_interface
+{
+    public function match(f_c_request_interface $request); # -> boolean
+    public function build($param, $type); # -> string
+}
+
+class f_c_route
+{
+    
+}
+
+
+app/module/app/
+
+
+
+
+
+
+
+
+
+
