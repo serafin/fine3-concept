@@ -23,13 +23,7 @@ class f_c_action
         $action = $this->request()->param('action');
         
         if (strlen($action) === 0 || !method_exists($this, "{$action}Action")) {
-            
-            if (!method_exists($this, "indexAction")) {
-                throw new f_controller_exception_notFound();
-            }
-            $action = 'index';
-            $this->request()->param('action', $action);
-
+            throw new f_controller_exception_notFound();
         }
         
         $this->{"{$action}Action"}();
@@ -46,11 +40,13 @@ class f_c_action_viewAutoRender
     {
         parent::dispatch();
         
-        $this->response()->body($this->container()->view()->render(
+        $this->app()->response()->body($this->app()->view()->render(
             "app/view/script" 
-            . "/" . $this->request()->param('controller')
-            . "/" . $this->request()->param('action')
+            . "/" . $this->app()->request()->param('controller')
+            . "/" . $this->app()->request()->param('action')
         ));
+        
+        $this->app()->module()->app->
 
     }
     

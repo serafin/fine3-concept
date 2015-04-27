@@ -33,6 +33,11 @@ model
 # zaleznosci i linkowania moduly
 - routy kontrollery
 - warstwa admin per module
+- baza danych
+- cssi jsi
+- pluginy do importera
+- importy, inputy
+- dvc to bundle?
 
 # to think
 - subcontent
@@ -40,3 +45,46 @@ model
 - `f_database_mysql_table`
 - f_m deprecated
 - nowy front controller, controller, dispatch
+- nowy v helper head
+- 
+
+
+TODO lvl 5
+==========
+
+- jak router bedzie append prepend routy
+- jak repozytoria ...
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+===========
+
+autoload
+bootstrap
+on{ModuleName}{Thing}{EventName}
+
+./Module/{ModuleName}/Module.php(container)
+
+$app->module->CloudMsg->module->Admin->
+$app->module->each()->module->admin->on
+$app->module->each()->module
+
+
+
+
+
+
+
+
+
