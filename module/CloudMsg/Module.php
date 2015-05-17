@@ -2,7 +2,7 @@
 
 namespace CloudMsg;
 
-class Module
+class Module extends Container
 {
     
     public function autoload()

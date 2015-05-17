@@ -17,15 +17,12 @@ class App extends \Fine\Di\Container
 
         $this->module = \Fine\Controller\Module\Manager::newInstance()->setModules(require 'config/module.php');
         
-        $event = \Fine\Event\Event::newInstance()->app($this);
-        
         $this->module->each()
             ->app($this)
             ->autoload()
-            ->bootstrap($event);
+            ->init()
+            ->bootstrap();
             
-        $event->conclude();
-
     }
     
 }
