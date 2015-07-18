@@ -2,29 +2,15 @@
 
 require "vendor/Fine/Autoload/Psr4.php";
 
-$autoload = \Fine\Autoload\Psr4::newInstance()
-    ->addNamespace('Fine', 'vendor/Fine/src')
+\Fine\Autoload\Psr4::newInstance()
+    ->addNamespace('Fine', 'vendor/Fine')
+    ->addNamespace('App', 'modules')
     ->register();
     
-    
-class App extends \Fine\Di\Container
-{
-    
-    public function __construct()
-    {
-        
-        $this->autoload = $GLOBALS['autoload'];
-
-        $this->module = \Fine\Controller\Module\Manager::newInstance()->setModules(require 'config/module.php');
-        
-        $this->module->each()
-            ->app($this)
-            ->autoload()
-            ->init()
-            ->bootstrap();
-            
-    }
-    
-}
-
-new App();
+\Fine\Controller\Application::newInstance()
+    ->setModules(array(
+        'App', 
+        'Backend', 
+        'CloudMsg',
+    ))
+    ->run();
